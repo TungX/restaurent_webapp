@@ -1,0 +1,36 @@
+.slides-wrapper {
+    width: 100%;
+    height: 500px;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
+
+    .slide {
+        width: 100%;
+        min-height: 100px;
+        background-color: red;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        .slide-wrapper {
+            width: 100%;
+            min-height: 100px;
+            position: relative;
+            .slide-image {
+                width: 100%;
+            }
+            .slide-text-area {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                .slide-content {
+                    color: white;
+                }
+                .slide-title {
+                    color: white;
+                }
+            }
+        }
+    }
+}
