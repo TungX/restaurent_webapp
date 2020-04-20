@@ -38,9 +38,6 @@ class App extends React.Component {
                             </Route>
                         </Switch>
                     </Suspense>
-                    <div className="footer">
-                        <p>Copyright © 2020 Smart converter</p>
-                    </div>
                 </div>
             </Router>
         )

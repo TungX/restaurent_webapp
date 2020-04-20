@@ -1,29 +1,39 @@
 import React from 'react';
-import '../styles/slideshow.scss'
+import '../styles/slideshow.scss';
+import { Slide } from 'react-slideshow-image';
+
+const properties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: true,
+    arrows: true
+}
 export default class Slideshow extends React.Component {
     constructor(props) {
         super(props);
     }
     renderSlide(slide, index) {
         return (
-            <div className="slide" style={{ left: `${index * 100}%` }} key={index}>
-                <div className="slide-wrapper">
-                    {slide.image && <img src={slide.image} className="slide-image" />}
+            <div className="each-slide" key={index}>
+                <div style={{ 'backgroundImage': `url(${slide.image})` }}>
                     <div className="slide-text-area">
-                        {slide.title && <h1 className="slide-title">{slide.title}</h1>}
-                        {slide.content && <p className="slide-content">{slide.content}</p>}
+                        <h1 className="slide-title">{slide.title}</h1>
+                        <p className="slide-content">{slide.content}</p>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
     render() {
         return (
             <div className="slides-wrapper">
-                {this.props.slides.map((value, index) => {
-                    return this.renderSlide(value, index);
-                })}
+                <Slide {...properties}>
+                    {this.props.slides.map((value, index) => {
+                        return this.renderSlide(value, index);
+                    })}
+                </Slide>
             </div>
-        );
+        )
     }
 }
