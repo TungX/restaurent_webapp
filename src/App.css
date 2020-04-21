@@ -1,94 +1,104 @@
 body, html {
-  height: 100%;
+    height: 100%;
 }
 
 #root {
-  height: 100%;
+    height: 100%;
 }
 
 #header {
-  position: relative;
-  background-color: #fff;
+    position: relative;
+    background-color: #fff;
 }
 
 .h_inner {
-  position: relative;
-  width: 80%;
-  height: 125px;
-  margin: 0 auto;
+    position: relative;
+    width: 80%;
+    height: 125px;
+    margin: 0 auto;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
-li {
-  float: right;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center
+.h_inner li {
+    float: right;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center
 }
 
-li.logo {
-  float: left;
+.h_inner li.logo {
+    float: left;
 }
 
-li.logo a {
-  margin-left: 0;
+.h_inner li.logo a {
+    margin-left: 0;
 }
 
-li a {
-  text-decoration: none;
-  margin-left: 20px;
-  color: #118FA6;
-  font-weight: bold;
+.h_inner li a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #118FA6;
+    font-weight: bold;
 }
 
-li a img {
-  height: 100px;
+.h_inner li a img {
+    height: 100px;
 }
 
-li a:hover {
-  color: #F58722;
-  text-decoration: none;
+.h_inner li a:hover {
+    color: #F58722;
+    text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  color: #F58722;
-  text-decoration: underline;
+.h_inner li a:hover:not(.active) {
+    color: #F58722;
+    text-decoration: underline;
 }
 
 .active {
-  color: #F58722;
+    color: #F58722;
 }
 
 .h_inner img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
-.footer {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  color: #118FA6;
+#footer {
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    color: #118FA6;
+    background-color: aqua;
+    height: 150px;
 }
 
 .wrapper {
-  width: 100%;
-  background-color: white;
+    width: 100%;
+    height: 100%;
+    background-color: white;
 }
 
 .wrapper h1 {
-  font-family: 'SF Pro Display heavy';
+    font-family: 'SF Pro Display heavy';
 }
 
-@media (max-height: 620px) {
-  .footer {
-    position: relative;
-  }
+.btn {
+    background-color: white;
+    color: #118FA6;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid 1px #118FA6;
+    padding: 5px 20px;
+}
+
+.btn:hover {
+    background-color: #118FA6;
+    color: white;
 }

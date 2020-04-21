@@ -3,4 +3,53 @@
     height: calc(100% - 90px - 20px);
     margin-left: auto;
     margin-right: auto;
+    .restaurant-title {
+        position: relative;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        img {
+            width: 100%;
+        }
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        
+    }
+    .restaurant-info {
+        text-align: center;
+        .descreption {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            width: 980px;
+            img {
+                width: 100%;
+            }
+            .text-area {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 99;
+                width: 380px;
+                background-color: white;
+                height: 100%;
+                .title {
+                    margin: 68px 33px 12px;
+                }
+                .line {
+                    width: 24px;
+                    height: 4px;
+                    border-top: solid 1px black;
+                    margin: 0 auto 20px auto;
+                }
+                .content {
+                    padding: 0 71px;
+                }
+            }
+        }
+    }
 }

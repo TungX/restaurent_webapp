@@ -6,6 +6,7 @@ import {
     Route,
 } from "react-router-dom";
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
+const MenuScreen = lazy(() => import('./componets/MenuScreen'));
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -36,8 +37,14 @@ class App extends React.Component {
                             <Route exact path="/">
                                 <HomeScreen />
                             </Route>
+                            <Route exact path="/menu">
+                                <MenuScreen />
+                            </Route>
                         </Switch>
                     </Suspense>
+                    <div id="footer">
+
+                    </div>
                 </div>
             </Router>
         )
