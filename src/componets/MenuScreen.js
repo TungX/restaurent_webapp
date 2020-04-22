@@ -60,13 +60,13 @@ export default class MenuScreen extends React.Component {
     render() {
         return (
             <div className="content">
-                <div className="categories">
+                {/* <div className="categories">
                     <ul>
                         {this.state.categories.map((value, index) => {
                             return <li key={index} className={`category-${index}`}>{value.name}</li>;
                         })}
                     </ul>
-                </div>
+                </div> */}
                 <div className="items">
                     {this.state.categories.map((value, index) => {
                         return this.renderCategory(value, index);

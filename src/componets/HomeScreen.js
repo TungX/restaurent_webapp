@@ -43,7 +43,7 @@ export default class HomeScreen extends React.Component {
                                 <p>
                                     Restauranten ligger sentralt plassert på Strømmen med nærhet til Strømmen Storsenter
                                 </p>
-                                <a href="/menu" className="btn menu">Menu</a>
+                                <a href="/menu" className="btn menu">Show Menu</a>
                             </div>
                         </div>
                     </div>
