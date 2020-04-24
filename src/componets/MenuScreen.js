@@ -58,6 +58,7 @@ export default class MenuScreen extends React.Component {
         )
     }
     render() {
+        this.count = 0;
         return (
             <div className="content">
                 {/* <div className="categories">

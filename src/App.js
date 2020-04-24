@@ -9,13 +9,15 @@ import LoadingBar from 'react-top-loading-bar';
 
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
 const MenuScreen = lazy(() => import('./componets/MenuScreen'));
+const RestaurantScreen = lazy(() => import('./componets/RestaurantScreen'));
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             currentPage: '',
             logined: false,
-            loadingBarProgress: 0
+            loadingBarProgress: 0,
+            classWhenScroll: '',
         };
         this.handleScroll = this.handleScroll.bind(this);
     }
@@ -26,9 +28,12 @@ class App extends React.Component {
     }
 
     handleScroll(e) {
-        console.log('handle scroll');
+        if (window.scrollY > 70) {
+            this.setState({ classWhenScroll: 'header-small' });
+        } else {
+            this.setState({ classWhenScroll: '' });
+        }
     }
-
     render() {
         return (
             <Router>
@@ -38,13 +43,14 @@ class App extends React.Component {
                     color='#118FA6'
                 />
                 <div className="wrapper">
-                    <div id="header">
+                    <div id="header" className={this.state.classWhenScroll}>
+                        <div className="background"></div>
                         <ul className='h_inner'>
                             <li className="logo"><a href="/"><img src='/assests/logo.png' /></a></li>
                             <li className="menu">
                                 <a href="/menu" className={this.state.currentPage === '/menu' ? 'active' : ''}>Menu</a>
                                 <a href="/booking" className={this.state.currentPage === '/booking' ? 'active' : ''}>Booking</a>
-                                <a href="/companies" className={this.state.currentPage === '/companies' ? 'active' : ''}>Companies</a>
+                                <a href="/resaurant" className={this.state.currentPage === '/companies' ? 'active' : ''}>Restaurant</a>
                                 <a href="/catering" className={this.state.currentPage === '/catering' ? 'active' : ''}>Catering</a>
                             </li>
                         </ul>
@@ -57,6 +63,9 @@ class App extends React.Component {
                             </Route>
                             <Route exact path="/menu">
                                 <MenuScreen />
+                            </Route>
+                            <Route exact path="/resaurant">
+                                <RestaurantScreen />
                             </Route>
                         </Switch>
                     </Suspense>
