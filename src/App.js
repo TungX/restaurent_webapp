@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import './App.css';
+import './App.scss';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,11 +10,13 @@ import LoadingBar from 'react-top-loading-bar';
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
 const MenuScreen = lazy(() => import('./componets/MenuScreen'));
 const RestaurantScreen = lazy(() => import('./componets/RestaurantScreen'));
+const CateringScreen = lazy(() => import('./componets/CateringScreen'));
+const BookingScreen = lazy(() => import('./componets/BookingScreen'));
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentPage: '',
+            currentPage: window.location.pathname,
             logined: false,
             loadingBarProgress: 0,
             classWhenScroll: '',
@@ -46,10 +48,12 @@ class App extends React.Component {
                     <div id="header" className={this.state.classWhenScroll}>
                         <div className="background"></div>
                         <ul className='h_inner'>
-                            <li className="logo"><a href="/"><img src='/assests/logo.png' /></a></li>
-                            <li className="menu">
+                            <li className="menu-left">
                                 <a href="/menu" className={this.state.currentPage === '/menu' ? 'active' : ''}>Menu</a>
                                 <a href="/booking" className={this.state.currentPage === '/booking' ? 'active' : ''}>Booking</a>
+                            </li>
+                            <li className="logo"><a href="/"><img src='/assests/logo.png' alt='logo' /></a></li>
+                            <li className="menu-right">
                                 <a href="/resaurant" className={this.state.currentPage === '/companies' ? 'active' : ''}>Restaurant</a>
                                 <a href="/catering" className={this.state.currentPage === '/catering' ? 'active' : ''}>Catering</a>
                             </li>
@@ -67,6 +71,12 @@ class App extends React.Component {
                             <Route exact path="/resaurant">
                                 <RestaurantScreen />
                             </Route>
+                            <Route exact path="/catering">
+                                <CateringScreen />
+                            </Route>
+                            <Route exact path="/booking">
+                                <BookingScreen />
+                            </Route>
                         </Switch>
                     </Suspense>
                 </div>
@@ -76,23 +86,26 @@ class App extends React.Component {
                         <h3>contact us</h3>
                         <div className="icons">
                             <a href="https://www.facebook.com/ABCRestaurantAS/">
-                                <img src="https://static.wixstatic.com/media/e0678ef25486466ba65ef6ad47b559e1.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01/e0678ef25486466ba65ef6ad47b559e1.webp" /></a>
+                                <img src="/assests/images/facebook-logo.webp" alt="facebook logo" />
+                            </a>
                             <a className="icon-2" href="https://www.facebook.com/ABCRestaurantAS/">
-                                <img src="https://static.wixstatic.com/media/52b5a40f3b0c4b6c9423b71489ba1bb0.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01/52b5a40f3b0c4b6c9423b71489ba1bb0.webp" /></a>
+                                <img src="/assests/images/tw-logo.webp" alt="tw logo" />
+                            </a>
                             <a href="https://www.facebook.com/ABCRestaurantAS/">
-                                <img src="https://static.wixstatic.com/media/da7ef6dd1302486c9a67baebe4b364bc.png/v1/fill/w_39,h_39,al_c,q_85,usm_0.66_1.00_0.01/da7ef6dd1302486c9a67baebe4b364bc.webp" /></a>
+                                <img src="/assests/images/intagram-logo.webp" alt="intagram logo" />
+                            </a>
                         </div>
                         <div className="address">
                             <p>
-                                <img src="/assests/images/phone.png" />
+                                <img src="/assests/images/phone.png" alt="phone logo" />
                                 <span>RING OSS: +47 41188856</span>
                             </p>
                             <p>
-                                <img src="/assests/images/point.png" />
+                                <img src="/assests/images/point.png" alt="point logo" />
                                 <span>Stromsveien 47, Strommen, Norway</span>
                             </p>
                             <p>
-                                <img src="/assests/images/mail.png" />
+                                <img src="/assests/images/mail.png" alt="mail logo" />
                                 <span>contact@abcrestaurant.no</span>
                             </p>
                         </div>

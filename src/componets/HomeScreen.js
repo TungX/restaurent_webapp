@@ -25,7 +25,7 @@ export default class HomeScreen extends React.Component {
                 <Slideshow slides={slides} />
                 <div className="restaurant-info">
                     <div className="restaurant-title">
-                        <img src="/assests/images/night-sky.png" />
+                        <img src="/assests/images/night-sky.png" alt="night sky" />
                         <h1>ABC RESTAURANT</h1>
                     </div>
                     <div className="descreption">
@@ -49,7 +49,7 @@ export default class HomeScreen extends React.Component {
                     </div>
                 </div>
                 <div className="restaurant-title">
-                    <img src="/assests/images/night-sky.png" />
+                    <img src="/assests/images/night-sky.png" alt="night sky" />
                     <h1>OUR RESTAURANT</h1>
                 </div>
                 <Slideshow slides={slides} />

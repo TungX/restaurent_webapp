@@ -1,0 +1,36 @@
+.content {
+    padding-top: 125px;
+    width: 100%;
+    min-width: auto;
+    min-height: calc(100% - 125px);
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    .backgroud {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        img {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .descreption {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        color: white;
+        .text-area {
+            position: absolute;
+            width: 100%;
+            max-width: 530px;
+            top: calc(50% - 70px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

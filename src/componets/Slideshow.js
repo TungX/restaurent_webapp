@@ -10,9 +10,6 @@ const properties = {
     arrows: true
 }
 export default class Slideshow extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     renderSlide(slide, index) {
         return (
             <div className="each-slide" key={index}>

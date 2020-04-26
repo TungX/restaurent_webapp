@@ -61,6 +61,9 @@ export default class MenuScreen extends React.Component {
         this.count = 0;
         return (
             <div className="content">
+                <div className="backgroud" style={{ height: window.innerHeight }}>
+                    <img src="/assests/images/restaurant-background.jpg" alt="backgroud"/>
+                </div>
                 {/* <div className="categories">
                     <ul>
                         {this.state.categories.map((value, index) => {

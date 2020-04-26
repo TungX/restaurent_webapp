@@ -1,11 +1,6 @@
 import React from 'react';
 import '../styles/restaurant.scss';
 
-const slides = [
-    { image: '/assests/images/first.jpg', title: 'First slide', content: 'Content of First slide' },
-    { image: '/assests/images/second.jpeg', title: 'Second slide', content: 'Content of Second slide' },
-    { image: '/assests/images/third.jpeg', title: 'Third slide', content: 'Content of Third slide' },
-];
 export default class RestaurantScreen extends React.Component {
     constructor(props) {
         super(props);

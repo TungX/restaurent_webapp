@@ -1,0 +1,158 @@
+body,
+html {
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+#header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+    .h_inner {
+        position: relative;
+        width: fit-content;
+        height: 125px;
+        margin: 0 auto;
+
+        li {
+            float: left;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                margin-left: 20px;
+                color: white;
+                font-weight: bold;
+
+                img {
+                    height: 100px;
+                }
+            }
+            .active {
+                color: #f58722;
+            }
+            a:hover {
+                color: #f58722;
+                text-decoration: none;
+            }
+
+            a:hover:not(.active) {
+                color: #f58722;
+                text-decoration: underline;
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+#header.header-small {
+    .background {
+        opacity: 1 !important;
+    }
+    .h_inner {
+        height: 90px;
+    }
+    li.logo {
+        a {
+            img {
+                height: 70px;
+            }
+        }
+    }
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    color: white;
+    min-height: 150px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    background-color: black;
+    padding: 20px 0;
+    .contact {
+        .icon-2 {
+            margin: 0 5px;
+        }
+
+        .address {
+            p {
+                text-align: left;
+                width: 280px;
+                margin: 10px auto;
+            }
+        }
+
+        img {
+            width: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .open-time {
+        .duration {
+            p {
+                max-width: 300px;
+                text-align: left;
+                display: grid;
+                grid-template-columns: auto auto;
+                margin: 5px auto;
+                .time {
+                    text-align: right;
+                }
+
+                .wrapper {
+                    width: 100%;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    h1 {
+        font-family: "SF Pro Display heavy";
+    }
+}
+
+.btn {
+    background-color: white;
+    color: #118fa6;
+    font-weight: bold;
+    text-decoration: none;
+    border: solid 1px #118fa6;
+    padding: 5px 20px;
+}
+
+.btn:hover {
+    background-color: #118fa6;
+    color: white;
+}
