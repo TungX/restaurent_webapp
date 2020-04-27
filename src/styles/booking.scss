@@ -22,13 +22,17 @@
 
     .menu {
         position: relative;
-        display: grid;
-        grid-template-columns: 20% auto 30%;
         .categories {
             color: yellow;
+            position: fixed;
+            top: 130px;
+            left: 0;
+            width: 20%;
         }
         .menu-info {
             position: relative;
+            width: 50%;
+            margin-left: 20%;
             .backgroud {
                 background-color: black;
                 position: absolute;
@@ -90,6 +94,39 @@
             }
         }
         .cart {
+            position: fixed;
+            top: 130px;
+            right: 0;
+            width: 30%;
+            color: white;
+            padding: 0 10px 5px 10px;
+            h4 {
+                background-color: #f58722;
+                text-align: center;
+                padding-bottom: 6px;
+            }
+            .item-info {
+                .number {
+                    background-color: #f58722;
+                    padding: 0px 5px;
+                }
+                .name {
+                    margin-left: 10px;
+                }
+                .price {
+                    float: right;
+                }
+            }
+        }
+    }
+}
+.content.header-small {
+    .menu {
+        .categories {
+            top: 90px;
+        }
+        .cart {
+            top: 95px;
         }
     }
 }

@@ -8,6 +8,7 @@ export default class MenuScreen extends React.Component {
         this.count = 0;
         this.state = {
             showForm: false,
+            classWhenScroll: '',
             currentItem: {},
             order: [],
             totalCost: 0,
@@ -41,6 +42,18 @@ export default class MenuScreen extends React.Component {
         this.handleClickBtnMinus = this.handleClickBtnMinus.bind(this);
         this.handleClickBtnPlus = this.handleClickBtnPlus.bind(this);
         this.handleChangeNumber = this.handleChangeNumber.bind(this);
+        this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+    handleScroll(e) {
+        if (window.scrollY > 70) {
+            this.setState({ classWhenScroll: 'header-small' });
+        } else {
+            this.setState({ classWhenScroll: '' });
+        }
     }
     renderCategories(category, index) {
         return (
@@ -80,6 +93,9 @@ export default class MenuScreen extends React.Component {
         this.setState({ showForm: true, currentItem, itemPrice: currentItem.price * currentItem.number });
     }
     handleAddToCart() {
+        const order = this.state.order;
+        const item = Object.assign({}, this.state.currentItem);
+        order.push({ ...item, node: this.refs.note.value });
         this.setState({ showForm: false });
     }
     handleModalClose() {
@@ -91,7 +107,8 @@ export default class MenuScreen extends React.Component {
     handleClickBtnPlus() {
         const currentItem = this.state.currentItem;
         currentItem.number = currentItem.number + 1;
-        this.setState({ currentItem, itemPrice: currentItem.price * currentItem.number });
+        currentItem.price = currentItem.price * currentItem.number;
+        this.setState({ currentItem, itemPrice: currentItem.price });
     }
     handleClickBtnMinus() {
         const currentItem = this.state.currentItem;
@@ -142,10 +159,22 @@ export default class MenuScreen extends React.Component {
             </Modal>
         )
     }
+    renderItemInCart(item, i) {
+        return (
+            <div className="item" key={i}>
+                <p className="item-info">
+                    <span className="number">{item.number}</span>
+                    <span className="name">{item.name}</span>
+                    <span className="price">kr {item.price}</span>
+                </p>
+                <p className="note"></p>
+            </div>
+        )
+    }
     render() {
         this.count = 0;
         return (
-            <div className="content">
+            <div className={`content ${this.state.classWhenScroll}`}>
                 <div className="backgroud" style={{ height: window.innerHeight }}>
                     <img src="/assests/images/background-of-booking.webp" alt="backgroud" />
                 </div>
@@ -164,7 +193,15 @@ export default class MenuScreen extends React.Component {
                             return this.renderCategories(value, index);
                         })}
                     </div>
-                    <div className="cart"></div>
+                    <div className="cart">
+                        <h4>Your cart</h4>
+                        <div className="items">
+                            {this.state.order.map((value, i) => {
+                                return this.renderItemInCart(value, i);
+                            })}
+                        </div>
+                        <div className="total"></div>
+                    </div>
                 </div>
                 {this.renderModal()}
             </div>
