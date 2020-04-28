@@ -6,6 +6,7 @@ export default class MenuScreen extends React.Component {
     constructor(props) {
         super(props);
         this.count = 0;
+        this.note = React.createRef();
         this.state = {
             showForm: false,
             classWhenScroll: '',
@@ -17,21 +18,21 @@ export default class MenuScreen extends React.Component {
                 {
                     name: 'VENTERETTER',
                     items: [
-                        { name: 'EDAMAME', price: '65', image: '/assests/images/foot.jpg', detail: 'Dampede edamamebønner med havsalt Steamed edamame beans with sea salt' },
-                        { name: 'SPICY EDAMAME', price: '65', image: '/assests/images/foot.jpg', detail: 'Wokede edamamebønner med chili hvitløkssaus Stir-fried edamame beans with spicy garlic sauce Allergener: Soya, sesam, gluten' },
-                        { name: 'SNACKS DE LUXE', price: '75', image: '/assests/images/foot.jpg', detail: 'Rekechips, glaserte valnøtter, fritert spinat Prawn crackers, glazed walnuts, crispy spinach Allergener: Skalldyr, nøtter, gluten' },
+                        { _id: '1', name: 'EDAMAME', price: '65', image: '/assests/images/foot.jpg', detail: 'Dampede edamamebønner med havsalt Steamed edamame beans with sea salt' },
+                        { _id: '2', name: 'SPICY EDAMAME', price: '65', image: '/assests/images/foot.jpg', detail: 'Wokede edamamebønner med chili hvitløkssaus Stir-fried edamame beans with spicy garlic sauce Allergener: Soya, sesam, gluten' },
+                        { _id: '3', name: 'SNACKS DE LUXE', price: '75', image: '/assests/images/foot.jpg', detail: 'Rekechips, glaserte valnøtter, fritert spinat Prawn crackers, glazed walnuts, crispy spinach Allergener: Skalldyr, nøtter, gluten' },
                     ]
                 },
                 {
                     name: 'FORRETTER & SMÅRETTER',
                     items: [
-                        { name: 'VÅRRULLER M/SCAMPI', price: '99', image: '/assests/images/foot.jpg', detail: 'Med scampi, crabstick og svinekjøtt. Serveres med ferskensaus. Spring rolls filled with shrimp, crabstick and pork. Served with peach sauce. Allergener: Gluten, skalldyr, fisk, egg' },
-                        { name: 'VIETNAMESISKE VÅRRULLER', price: '99', image: '/assests/images/foot.jpg', detail: 'Med svinekjøtt og grønnsaker. Serveres med fiskesaus. Spring rolls filled with pork and vegetables. Served with fish sauce. Allergener: Gluten, fisk' },
-                        { name: 'VÅRRULLER M/BIFF', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
-                        { name: 'VEGETAR VÅRRULLER', price: '99', image: '/assests/images/foot.jpg', detail: 'Med tofu og grønnsaker. Serveres med sweet chilisaus. Spring rolls filled with tofu and vegetables. Served with sweet chili sauce. Allergener: Gluten, soya, fisk' },
-                        { name: 'WONTON-SUPPE', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
-                        { name: 'PEKINGSUPPE (STERK)', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
-                        { name: 'TOM YUM KUNG-SUPPE (STERK)', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
+                        { _id: '4', name: 'VÅRRULLER M/SCAMPI', price: '99', image: '/assests/images/foot.jpg', detail: 'Med scampi, crabstick og svinekjøtt. Serveres med ferskensaus. Spring rolls filled with shrimp, crabstick and pork. Served with peach sauce. Allergener: Gluten, skalldyr, fisk, egg' },
+                        { _id: '5', name: 'VIETNAMESISKE VÅRRULLER', price: '99', image: '/assests/images/foot.jpg', detail: 'Med svinekjøtt og grønnsaker. Serveres med fiskesaus. Spring rolls filled with pork and vegetables. Served with fish sauce. Allergener: Gluten, fisk' },
+                        { _id: '6', name: 'VÅRRULLER M/BIFF', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
+                        { _id: '7', name: 'VEGETAR VÅRRULLER', price: '99', image: '/assests/images/foot.jpg', detail: 'Med tofu og grønnsaker. Serveres med sweet chilisaus. Spring rolls filled with tofu and vegetables. Served with sweet chili sauce. Allergener: Gluten, soya, fisk' },
+                        { _id: '8', name: 'WONTON-SUPPE', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
+                        { _id: '9', name: 'PEKINGSUPPE (STERK)', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
+                        { _id: '10', name: 'TOM YUM KUNG-SUPPE (STERK)', price: '99', image: '/assests/images/foot.jpg', detail: 'Med oksekjøtt og grønnsaker. Serveres med sursøt saus. Spring rolls filled with beef and vegetables. Served with sweet sour sauce. Allergener: Gluten, soya, fisk, skalldyr' },
                     ]
                 },
 
@@ -90,13 +91,16 @@ export default class MenuScreen extends React.Component {
     }
     handleClickBtnRequest(currentItem) {
         currentItem.number = currentItem.number || 1;
+        currentItem.totalPrice = currentItem.price * currentItem.number;
         this.setState({ showForm: true, currentItem, itemPrice: currentItem.price * currentItem.number });
     }
     handleAddToCart() {
         const order = this.state.order;
         const item = Object.assign({}, this.state.currentItem);
-        order.push({ ...item, node: this.refs.note.value });
-        this.setState({ showForm: false });
+        item.note = this.note.current.value;
+        order.push(item);
+        console.log(order);
+        this.setState({ showForm: false, order });
     }
     handleModalClose() {
         this.setState({ showForm: false });
@@ -107,8 +111,8 @@ export default class MenuScreen extends React.Component {
     handleClickBtnPlus() {
         const currentItem = this.state.currentItem;
         currentItem.number = currentItem.number + 1;
-        currentItem.price = currentItem.price * currentItem.number;
-        this.setState({ currentItem, itemPrice: currentItem.price });
+        currentItem.totalPrice = currentItem.price * currentItem.number;
+        this.setState({ currentItem, itemPrice: currentItem.totalPrice });
     }
     handleClickBtnMinus() {
         const currentItem = this.state.currentItem;
@@ -116,7 +120,8 @@ export default class MenuScreen extends React.Component {
             return;
         }
         currentItem.number = currentItem.number - 1;
-        this.setState({ currentItem, itemPrice: currentItem.price * currentItem.number });
+        currentItem.totalPrice = currentItem.price * currentItem.number;
+        this.setState({ currentItem, itemPrice: currentItem.totalPrice });
     }
     renderModal() {
         return (
@@ -131,7 +136,7 @@ export default class MenuScreen extends React.Component {
                     <Form.Group controlId="name">
                         <Form.Label>Spesielle forespørsler?</Form.Label>
                         <Form.Control as="textarea" rows="3"
-                            ref="note"
+                            ref={this.note}
                             defaultValue={this.state.currentItem.note}
                             placeholder="Legg dem til her. Vi vil gjøre vårt beste for å imøtekomme dem." />
                     </Form.Group>
@@ -139,13 +144,15 @@ export default class MenuScreen extends React.Component {
                 <Modal.Footer>
                     <div className="select-number">
                         <span className="btn minus" onClick={this.handleClickBtnMinus}>
-                            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="20" height="20" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <rect height="1" width="18" y="9" x="1"></rect>
                             </svg>
                         </span>
                         <span className="number">{this.state.currentItem.number}</span>
                         <span className="btn plus" onClick={this.handleClickBtnPlus}>
-                            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="20" height="20" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <rect x="9" y="1" width="1" height="17"></rect>
                                 <rect x="1" y="9" width="17" height="1"></rect>
                             </svg>
@@ -162,12 +169,15 @@ export default class MenuScreen extends React.Component {
     renderItemInCart(item, i) {
         return (
             <div className="item" key={i}>
-                <p className="item-info">
-                    <span className="number">{item.number}</span>
-                    <span className="name">{item.name}</span>
-                    <span className="price">kr {item.price}</span>
-                </p>
-                <p className="note"></p>
+                <div className="item-info">
+                    <div><span className="number">{item.number}</span></div>
+                    <div className="item-text-area">
+                        <span className="name">{item.name}</span>
+                        <span className="price">kr {item.totalPrice}</span>
+                        <p className="note">{item.note}</p>
+                    </div>
+                </div>
+
             </div>
         )
     }
@@ -175,8 +185,8 @@ export default class MenuScreen extends React.Component {
         this.count = 0;
         return (
             <div className={`content ${this.state.classWhenScroll}`}>
-                <div className="backgroud" style={{ height: window.innerHeight }}>
-                    <img src="/assests/images/background-of-booking.webp" alt="backgroud" />
+                <div className="background" style={{ height: window.innerHeight }}>
+                    <img src="/assests/images/background-of-booking.webp" alt="background" />
                 </div>
                 <div className="menu" style={{ minHeight: window.innerHeight }} >
                     <div className="categories">
@@ -187,13 +197,14 @@ export default class MenuScreen extends React.Component {
                         </ul>
                     </div>
                     <div className="menu-info">
-                        <div className="backgroud">
+                        <div className="background">
                         </div>
                         {this.state.categories.map((value, index) => {
                             return this.renderCategories(value, index);
                         })}
                     </div>
                     <div className="cart">
+                        <div className="background"></div>
                         <h4>Your cart</h4>
                         <div className="items">
                             {this.state.order.map((value, i) => {
