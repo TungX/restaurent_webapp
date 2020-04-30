@@ -19,6 +19,12 @@ async function create(req, res) {
                     itemRaw.code = cname.substring(0, index).trim();
                     itemRaw.name = cname.substring(index + 1).trim();
                 }
+                if(itemRaw.price){
+                    const match = itemRaw.price.match(/\d+/i);
+                    if(match){
+                        itemRaw.price = match[0];
+                    }
+                }
                 const item = await Item.create(itemRaw);
                 itemIds.push(item._id);
             } catch (error) {

@@ -43,7 +43,7 @@ export default class MenuScreen extends React.Component {
             for (let i = this.categoryActive - 1; i >= 0; i--) {
                 const elementBottom = this.refs[`category-${i}`].getBoundingClientRect().top +
                     this.refs[`category-${i}`].clientHeight;
-                    console.log(`${i}-${elementBottom}`);
+                console.log(`${i}-${elementBottom}`);
                 if (elementBottom > 200) {
                     this.state.categories[this.categoryActive].active = false;
                     this.categoryActive = i;
@@ -86,7 +86,7 @@ export default class MenuScreen extends React.Component {
                             <span>Allergener:</span>
                             {item.allergens}</h5>}
                     </div>
-                    <h5 className="price">kr <span>99</span></h5>
+                    <h5 className="price">kr <span>{item.price || 99}</span></h5>
                 </div>
 
             </div>
