@@ -83,7 +83,7 @@ ul {
     min-height: 150px;
     display: grid;
     text-align: center;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 33% 33% 34%;
     background-color: black;
     padding: 20px 0;
     h1 {
@@ -187,8 +187,14 @@ ul {
     }
 }
 
-// @media only screen and (max-width: 899px) {
-//     #footer {
-//         grid-template-columns: auto;
-//     }
-// }
+@media only screen and (max-width: 799px) {
+    #footer {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    #footer {
+        grid-template-columns: 1fr;
+    }
+}
