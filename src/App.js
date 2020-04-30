@@ -5,6 +5,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
 import LoadingBar from 'react-top-loading-bar';
 
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
@@ -47,8 +48,9 @@ class App extends React.Component {
                 <div className="wrapper">
                     <div id="header" className={this.state.classWhenScroll}>
                         <div className="background"></div>
-                        <ul className='h_inner'>
+                        {/* <ul className='h_inner'>
                             <li className="menu-left">
+                                <a href="/" className={this.state.currentPage === '/' ? 'active' : ''}>Home</a>
                                 <a href="/menu" className={this.state.currentPage === '/menu' ? 'active' : ''}>Menu</a>
                                 <a href="/booking" className={this.state.currentPage === '/booking' ? 'active' : ''}>Booking</a>
                             </li>
@@ -57,7 +59,20 @@ class App extends React.Component {
                                 <a href="/resaurant" className={this.state.currentPage === '/companies' ? 'active' : ''}>Restaurant</a>
                                 <a href="/catering" className={this.state.currentPage === '/catering' ? 'active' : ''}>Catering</a>
                             </li>
-                        </ul>
+                        </ul> */}
+                        <Navbar collapseOnSelect expand="lg">
+                            <Navbar.Brand href="/" className="logo-left"><img src='/assests/logo.png' alt='logo' /></Navbar.Brand>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav">
+                                <Nav className="mr-auto">
+                                    <Nav.Link href="/">Home</Nav.Link>
+                                    <Nav.Link href="/menu">Menu</Nav.Link>
+                                    <Nav.Link href="/" className="logo-center"><img src='/assests/logo.png' alt='logo' /></Nav.Link>
+                                    <Nav.Link href="/resaurant">Restaurant</Nav.Link>
+                                    <Nav.Link href="/catering">Catering</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Navbar>
                     </div>
 
                     <Suspense fallback={<div>Loading...</div>}>
@@ -83,7 +98,7 @@ class App extends React.Component {
                 <div id="footer">
                     <div className="contact">
                         <h1>RESTAURANT</h1>
-                        <h3>contact us</h3>
+                        <h1>contact us</h1>
                         <div className="icons">
                             <a href="https://www.facebook.com/ABCRestaurantAS/">
                                 <img src="/assests/images/facebook-logo.webp" alt="facebook logo" />
@@ -144,7 +159,7 @@ class App extends React.Component {
                         <div className="fb-page"
                             data-href="https://www.facebook.com/ABCRestaurantAS/"
                             data-tabs="timeline"
-                            data-width="330"
+                            data-width="320"
                             data-height="180"
                             data-small-header="true"
                             data-adapt-container-width="true"

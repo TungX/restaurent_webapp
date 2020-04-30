@@ -24,7 +24,7 @@ export default class RestaurantScreen extends React.Component {
                     </div>
                 </div>
                 <div className="section section-two" style={{ height: (window.innerHeight) }}>
-                    <img src="/assests/images/restaurant_2.webp" alt="Kitchen" />
+                    {/* <img src="/assests/images/restaurant_2.webp" alt="Kitchen" /> */}
                     <div className="text-area">
                         <div className="text-content">
                             <h1 className="title">CONTACT US</h1>
@@ -44,7 +44,7 @@ export default class RestaurantScreen extends React.Component {
                     </div>
                 </div>
                 <div className="section section-three" style={{ height: (window.innerHeight) }}>
-                    <img src="/assests/images/restaurant_3.webp" alt="Kitchen" />
+                    {/* <img src="/assests/images/restaurant_3.webp" alt="Kitchen" /> */}
                     <div className="text-area">
                         <div className="text-content">
                             <h1 className="title">CONTACT US</h1>

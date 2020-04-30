@@ -28,7 +28,6 @@
             }
         }
     }
-
     .background {
         position: absolute;
         top: 0;
@@ -39,7 +38,6 @@
         z-index: 0;
         opacity: 0.7;
     }
-
     .section {
         position: relative;
         img {
@@ -70,8 +68,29 @@
         }
     }
     .section-two {
+        background-image: url("/assests/images/restaurant_2.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         .text-area {
-            left: 50%;
+            right: 0;
+            left: initial;
+        }
+    }
+    .section-three {
+        background-image: url("/assests/images/restaurant_3.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .content {
+        .section {
+            .text-area {
+                width: 100%;
+            }
         }
     }
 }

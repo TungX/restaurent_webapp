@@ -24,13 +24,11 @@ export default class Slideshow extends React.Component {
     }
     render() {
         return (
-            <div className="slides-wrapper">
-                <Slide {...properties}>
-                    {this.props.slides.map((value, index) => {
-                        return this.renderSlide(value, index);
-                    })}
-                </Slide>
-            </div>
+            <Slide {...properties} className="slides-wrapper">
+                {this.props.slides.map((value, index) => {
+                    return this.renderSlide(value, index);
+                })}
+            </Slide>
         )
     }
 }

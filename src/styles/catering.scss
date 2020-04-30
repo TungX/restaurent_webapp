@@ -11,14 +11,17 @@
         top: 0;
         left: 0;
         width: 100%;
-        img {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
+        background-image: url("/assests/images/background-of-catering.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // img {
+        //     position: absolute;
+        //     width: 100%;
+        //     top: 50%;
+        //     transform: translate(0, -50%);
+        // }
     }
-
     .descreption {
         width: 100%;
         text-align: center;
@@ -31,6 +34,7 @@
             top: calc(50% - 70px);
             left: 50%;
             transform: translate(-50%, -50%);
+            padding: 0 5px;
         }
     }
 }

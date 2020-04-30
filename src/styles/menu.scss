@@ -2,46 +2,198 @@
     padding-top: 125px;
     width: 100%;
     min-width: auto;
-    min-height: calc(100% - 125px);
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-    .backgroud {
+    .background {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        background-image: url("/assests/images/background-of-menu.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         img {
             width: 100%;
-            height: 100%;
         }
     }
     .categories {
-        color: yellow;
-        li {
-            text-align: right;
+        position: fixed;
+        width: 250px;
+        top: 130px;
+        max-height: calc(100% - 135px);
+        padding-top: 23px;
+        overflow-y: auto;
+        z-index: 100;
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: none;
+        }
+         ::-webkit-scrollbar {
+            width: 0px;
+        }
+        ul {
+            position: relative;
+            overflow: auto;
+            li {
+                position: relative;
+                text-align: right;
+                color: white;
+                margin: 5px 0;
+                cursor: pointer;
+                font-weight: bold;
+                // display: inline;
+            }
+            .active {
+                color: yellow;
+            }
         }
     }
     .items {
-        opacity: 0.8;
-        background-color: gray;
-        width: 100%;
-        max-width: 700px;
-        padding: 30px 70px;
-        margin-left: auto;
-        margin-right: auto;
-        color: honeydew;
-        h1 {
-            font-size: 25px;
-            color: yellow;
+        position: relative;
+        max-width: calc(100% - 260px);
+        padding: 30px auto;
+        margin-left: 260px;
+        color: black;
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: none;
         }
-        .item {
-            .item-info {
+        .category {
+            z-index: 99;
+            position: relative;
+            h1 {
+                font-size: 25px;
+                color: #f58722;
+            }
+            .line {
+                border-top: solid 3px #f58722;
+                width: 70px;
+                height: 20px;
+            }
+            ul {
                 display: grid;
-                grid-template-columns: max-content auto max-content;
-                .dots {
-                    border-bottom: dotted 2px white;
-                    margin: 0 5px 6px 5px;
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                .item {
+                    position: relative;
+                    display: grid;
+                    cursor: pointer;
+                    grid-template-columns: 100px auto;
+                    margin: 10px 10px;
+                    padding: 5px;
+                    padding-top: 15px;
+                    box-shadow: 2px 2px 5px grey;
+                    .background {
+                        position: absolute;
+                        opacity: 1;
+                        background-color: white;
+                    }
+                    .image {
+                        position: relative;
+                        overflow-y: hidden;
+                        img {
+                            width: 100%;
+                            position: absolute;
+                            top: 0%;
+                        }
+                    }
+                    .item-info {
+                        position: relative;
+                        margin-left: 10px;
+                        .name {
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
+                        .description {
+                            font-weight: 10;
+                            margin-bottom: 35px;
+                            .detail {
+                                font-size: 16px;
+                                color: gray;
+                            }
+                            .allergener {
+                                font-size: 16px;
+                                color: gray;
+                                span {
+                                    color: red;
+                                }
+                            }
+                        }
+                        .price {
+                            position: absolute;
+                            bottom: 0px;
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #f58722;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content.header-small {
+    .categories {
+        top: 80px;
+        max-height: calc(100% - 95px);
+    }
+}
+
+@media only screen and (max-width: 679px) {
+    .content {
+        .background {
+            img {
+                width: unset;
+                height: 100%;
+            }
+        }
+        .categories {
+            top: 80px;
+            width: 100%;
+            padding-top: 0;
+            .background {
+                background-color: black;
+                height: calc(100% - 16px);
+            }
+            ul {
+                white-space: nowrap;
+                li {
+                    display: inline;
+                    margin-left: 20px;
+                    padding: auto 10px;
+                }
+            }
+        }
+        .items {
+            max-width: 100%;
+            margin-left: 0;
+            padding: unset;
+            .category {
+                ul {
+                    grid-template-columns: repeat(auto-fill, 1fr);
+                    // .item {
+                    //     margin: 10px 0;
+                    // }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .content {
+        .items {
+            .category {
+                ul {
+                    .item {
+                        margin: 10px 0;
+                    }
                 }
             }
         }

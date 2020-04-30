@@ -13,7 +13,7 @@ export default class MenuScreen extends React.Component {
         return (
             <div className="content">
                 <div className="backgroud" style={{ height: window.innerHeight }}>
-                    <img src="/assests/images/background-of-catering.webp" alt="backgroud" />
+                    {/* <img src="/assests/images/background-of-catering.webp" alt="backgroud" /> */}
                 </div>
                 <div className="descreption" style={{ minHeight: (window.innerHeight) }} >
                     <div className="text-area">
