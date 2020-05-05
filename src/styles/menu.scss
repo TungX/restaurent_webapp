@@ -32,7 +32,7 @@
             height: 100%;
             background-image: none;
         }
-         ::-webkit-scrollbar {
+        ::-webkit-scrollbar {
             width: 0px;
         }
         ul {
@@ -78,12 +78,14 @@
             }
             ul {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 .item {
                     position: relative;
-                    display: grid;
+                    // display: grid;
                     cursor: pointer;
-                    grid-template-columns: 100px auto;
+                    overflow-x: hidden;
+                    text-overflow: clip;
+                    // grid-template-columns: 100px auto;
                     margin: 10px 10px;
                     padding: 5px;
                     padding-top: 15px;
@@ -96,6 +98,7 @@
                     .image {
                         position: relative;
                         overflow-y: hidden;
+                        height: 200px;
                         img {
                             width: 100%;
                             position: absolute;
@@ -124,13 +127,14 @@
                                 }
                             }
                         }
-                        .price {
-                            position: absolute;
-                            bottom: 0px;
-                            font-size: 16px;
-                            font-weight: 600;
-                            color: #f58722;
-                        }
+                    }
+                    .price {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 10px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #f58722;
                     }
                 }
             }

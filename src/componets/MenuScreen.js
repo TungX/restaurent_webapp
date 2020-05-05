@@ -76,7 +76,7 @@ export default class MenuScreen extends React.Component {
             <div className="item" key={index}>
                 <div className="background"></div>
                 <div className="image">
-                    <img src={item.image ? item.image : '/assests/images/foot.png'} />
+                    <img src={item.image ? item.image : '/assests/images/sushi.png'} />
                 </div>
                 <div className="item-info">
                     <h4 className="name">{item.code}. {item.name}</h4>
@@ -86,13 +86,13 @@ export default class MenuScreen extends React.Component {
                             <span>Allergener:</span>
                             {item.allergens}</h5>}
                     </div>
-                    <h5 className="price">kr <span>{item.price || 99}</span></h5>
                 </div>
-
+                <h5 className="price">kr <span>{item.price || 99}</span></h5>
             </div>
         )
     }
     // loadMenuItem() {
+    //     categoryElements = $('.classicYlF2o')
     //     var categories = [];
     //     for (var i = 0; i < categoryElements.length; i++) {
     //         var categoryElement = $(categoryElements[i]);

@@ -15,6 +15,44 @@
             text-align: center;
         }
     }
+    .about-us {
+        text-align: center;
+        background-image: url("/assests/images/slide_2.1.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        padding-top: 100px;
+        .sushi-place {
+            // position: absolute;
+            // bottom: 0;
+            margin-top: 40px;
+            width: 100%;
+        }
+        .text-area {
+            color: white;
+            .title {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .text-content {
+                font-size: 15px;
+                text-transform: uppercase;
+                p {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .foots {
+        .slide-foot {
+            img {
+                border-radius: 100%;
+            }
+        }
+    }
+
     .restaurant-info {
         text-align: center;
         background-image: url("/assests/images/kitchen.png");
@@ -35,7 +73,7 @@
                 opacity: 0.7;
             }
             .text-area {
-                font-family: 'futura-lt-w01-book', sans-serif;
+                font-family: "futura-lt-w01-book", sans-serif;
                 position: relative;
                 z-index: 99;
                 color: white;
@@ -65,8 +103,64 @@
             }
         }
     }
+    .blog {
+        background-image: url("/assests/images/blog_home.png");
+        // background-position: center;
+        background-repeat: no-repeat;
+        // background-size: cover;
+        position: relative;
+        background-color: black;
+        padding-top: 50px;
+        .blog-wrapper {
+            width: 100%;
+            max-width: 1024px;
+            margin: auto;
+            color: white;
+            h1 {
+                text-align: right;
+                .title {
+                    float: left;
+                }
+            }
+            .blog-first-content {
+                color: black;
+                background-color: white;
+                padding-bottom: 20px;
+                a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .blog-content {
+                    padding: 20px;
+                    .title {
+                        margin-top: 10px;
+                    }
+                    a.btn {
+                        display: inline;
+                        background-color: #fd7e14;
+                    }
+                    a.btn:hover {
+                        color: #fd7e14;
+                        background-color: white;
+                        border-color: #fd7e14;
+                    }
+                }
+            }
+            .blog-other-content {
+            }
+        }
+    }
 }
-
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
 @media only screen and (max-width: 679px) {
     .content {
         margin-top: 80px;

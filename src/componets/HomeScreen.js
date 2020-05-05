@@ -1,12 +1,43 @@
 import React from 'react';
 import '../styles/home.scss';
 import Slideshow from './Slideshow';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const slides = [
-    { image: '/assests/images/first.jpg', title: 'First slide', content: 'Content of First slide' },
-    { image: '/assests/images/second.jpeg', title: 'Second slide', content: 'Content of Second slide' },
-    { image: '/assests/images/third.jpeg', title: 'Third slide', content: 'Content of Third slide' },
+    { image: '/assests/images/slide_1.1.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
+    { image: '/assests/images/slide_1.2.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
+    { image: '/assests/images/slide_1.3.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
 ];
+const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 5
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
+
+const foots = [
+    '/assests/images/foot_1.webp',
+    '/assests/images/foot_2.webp',
+    '/assests/images/foot_3.webp',
+    '/assests/images/foot_4.webp',
+    '/assests/images/foot_5.webp',
+    '/assests/images/foot_6.webp',
+]
+
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -17,15 +48,65 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
             <div className="content">
-                <Slideshow slides={slides} />
-                <div className="restaurant-title">
-                    <h1>ABC RESTAURANT</h1>
+                <Slideshow slides={slides} style={{ minHeight: (window.innerHeight) }} />
+                <div className="about-us" style={{ minHeight: (window.innerHeight) }}>
+                    <div className="background" ></div>
+                    <div className='text-area'>
+                        <h1 className='title'>ABOUT US</h1>
+                        <div className='text-content'>
+                            <p>abc restaurant is a family business with over so years of experience in the industry</p>
+                            <p>we want to offer you an experience in asian flavors</p>
+                            <p>with us we have a la carte, sunday buffer, catering solutions and take away</p>
+                            <p>in addition we also have banqueeting rooms that you can book for coures</p>
+                            <p>and conferences or for other special events</p>
+                            <p>the restaurant is centrally located on STRØMMEN close to STRØMMEN storsenter</p>
+                        </div>
+                    </div>
+                    <div className="sushi-place">
+                        <img src='/assests/images/sushi-place.png' />
+                    </div>
                 </div>
-                <div className="restaurant-info" style={{ minHeight: (window.innerHeight) }}>
+                <div className='foots'>
+                    <Carousel
+                        responsive={responsive}
+                        autoPlay={true}
+                        autoPlaySpeed={2000}
+                        keyBoardControl={true}
+                        transitionDuration={1000}
+                        infinite={true}
+                    >
+                        {foots.map((value, index) => {
+                            return <div className='slide-foot' key={`slide-foot-${index}`}><img src={value} /></div>
+                        })}
+                    </Carousel>
+                </div>
+                <div className="blog" style={{ minHeight: (window.innerHeight) }}>
+                    <div className='blog-wrapper'>
+                        <h1>
+                            <span className='title'>BLOG</span>
+                            <span className='btn pull-right'>SHOW MORE</span>
+                        </h1>
+                        <div className='blog-first-content'>
+                            <a href='/menu'><img src='/assests/images/blog-first.webp' /></a>
+                            <div className='blog-content'>
+                                <h2 className='title'>Ở nhà đổi vị cùng trà sữa mắc ca trân châu trắng</h2>
+                                <p>Một "làn gió" mới mà The Coffee House mang đến cho bạn trong tháng 4 - TRÀ SỮA MẮC CA TRÂN TRÂU TRẮNG sẽ chính thức lên kệ từ ngày ...</p>
+                                <a href='#' className='btn'>Show more</a>
+                            </div>
+                        </div>
+                        <div className='blog-other-content'>
+
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="at-the-abc" style={{ minHeight: (window.innerHeight) }}>
+                    <h1>AT THE ABC RESTAURANT</h1>
+                </div> */}
+                {/* <div className="restaurant-info" style={{ minHeight: (window.innerHeight) }}>
                     <div className="descreption" style={{ minHeight: (window.innerHeight) }}>
                         <div className="background" ></div>
                         <div className="text-area">
-                            <h1 className="title">OM OSS</h1>
+                            <h1 className="title">TAKE AWAY</h1>
                             <div className="line"></div>
                             <div className="text-content">
                                 <p>
@@ -37,16 +118,11 @@ export default class HomeScreen extends React.Component {
                                 <p>
                                     Restauranten ligger sentralt plassert på Strømmen med nærhet til Strømmen Storsenter
                                 </p>
-                                <a href="/menu" className="btn menu">Show Out Menu</a>
+                                <a href="/menu" className="btn menu">BESTILL TAKEAWAY</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="restaurant-title">
-                    {/* <img src="/assests/images/night-sky.png" alt="night sky" /> */}
-                    <h1>OUR RESTAURANT</h1>
-                </div>
-                <Slideshow slides={slides} />
+                </div> */}
             </div>
         )
     }

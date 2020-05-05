@@ -10,12 +10,23 @@
         width: 70%;
         margin: auto;
     }
-    .each-slide>div {
+    .each-slide > div {
         display: flex;
         align-items: center;
         justify-content: center;
         background-size: cover;
-        height: 500px;
+        .slide-text-area {
+            color: white;
+            .slide-title {
+                font-size: 50px;
+                text-shadow: #ffffff 0px 0px 6px;
+            }
+            .slide-content{
+                font-size: 25px;
+                letter-spacing: 0.3em;
+                text-align: center;
+            }
+        }
     }
     .each-fade {
         display: flex;
