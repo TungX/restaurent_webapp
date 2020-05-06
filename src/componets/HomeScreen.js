@@ -55,9 +55,9 @@ export default class HomeScreen extends React.Component {
             <div className="content">
                 <div className="first-page">
                     <Slideshow slides={slides} style={{ minHeight: (window.innerHeight) }} />
-                    <div class="fixed-scroll-down">
+                    {/* <div class="fixed-scroll-down">
                         <span class="fixed-scroll-text">Kéo xuống</span>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="about-us" style={{ minHeight: (window.innerHeight) }}>
                     <div className="background" ></div>
