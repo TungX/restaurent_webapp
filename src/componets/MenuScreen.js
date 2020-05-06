@@ -76,16 +76,16 @@ export default class MenuScreen extends React.Component {
             <div className="item" key={index}>
                 <div className="background"></div>
                 <div className="image">
-                    <img src={item.image ? item.image : '/assests/images/sushi.png'} />
+                    <img src={item.image ? item.image : '/assests/images/drink.webp'} />
                 </div>
                 <div className="item-info">
                     <h4 className="name">{item.code}. {item.name}</h4>
-                    <div className="description">
+                    {/* <div className="description">
                         {item.detail && <h5 className="detail">{item.detail}</h5>}
                         {item.allergens && <h5 className="allergener">
                             <span>Allergener:</span>
                             {item.allergens}</h5>}
-                    </div>
+                    </div> */}
                 </div>
                 <h5 className="price">kr <span>{item.price || 99}</span></h5>
             </div>
@@ -158,7 +158,7 @@ export default class MenuScreen extends React.Component {
                                 <li key={index}
                                     className={`category-${index} ${value.active ? 'active' : ''}`}
                                     onClick={() => this.handleClickCategory(index)}>
-                                    {value.name}
+                                    <a>{value.name}</a>
                                 </li>
                             );
                         })}

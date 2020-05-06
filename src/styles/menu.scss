@@ -1,6 +1,12 @@
+#header{
+    .background {
+        opacity: 1;
+    }
+}
 .content {
     padding-top: 125px;
     width: 100%;
+    max-width: 1111px;
     min-width: auto;
     margin-left: auto;
     margin-right: auto;
@@ -10,17 +16,18 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-image: url("/assests/images/background-of-menu.webp");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        // background-image: url("/assests/images/background-of-menu.webp");
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        background-color: white;
         img {
             width: 100%;
         }
     }
     .categories {
         position: fixed;
-        width: 250px;
+        width: 350px;
         top: 130px;
         max-height: calc(100% - 135px);
         padding-top: 23px;
@@ -39,24 +46,30 @@
             position: relative;
             overflow: auto;
             li {
+                padding: 12px 30px;
                 position: relative;
-                text-align: right;
-                color: white;
-                margin: 5px 0;
+                text-align: left;
+
                 cursor: pointer;
                 font-weight: bold;
-                // display: inline;
+                a {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #000;
+                }
             }
             .active {
-                color: yellow;
+                a {
+                    color: #ea8025;
+                }
             }
         }
     }
     .items {
         position: relative;
-        max-width: calc(100% - 260px);
+        max-width: calc(100% - 350px);;
         padding: 30px auto;
-        margin-left: 260px;
+        margin-left: 350px;
         color: black;
         .background {
             position: absolute;
@@ -68,8 +81,9 @@
             z-index: 99;
             position: relative;
             h1 {
-                font-size: 25px;
-                color: #f58722;
+                font-size: 42px;
+                color: black;
+                margin-bottom: 30px;
             }
             .line {
                 border-top: solid 3px #f58722;
@@ -78,7 +92,8 @@
             }
             ul {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                grid-template-columns: 33.333% 33.334% 33.333%;
                 .item {
                     position: relative;
                     // display: grid;
@@ -89,7 +104,7 @@
                     margin: 10px 10px;
                     padding: 5px;
                     padding-top: 15px;
-                    box-shadow: 2px 2px 5px grey;
+                    // box-shadow: 2px 2px 5px grey;
                     .background {
                         position: absolute;
                         opacity: 1;
@@ -98,7 +113,7 @@
                     .image {
                         position: relative;
                         overflow-y: hidden;
-                        height: 200px;
+                        height: 250px;
                         img {
                             width: 100%;
                             position: absolute;
@@ -107,10 +122,18 @@
                     }
                     .item-info {
                         position: relative;
-                        margin-left: 10px;
+                        margin-bottom: 55px;
                         .name {
                             font-size: 20px;
                             font-weight: 700;
+                            font-family: "BebasNeue", "Lato", "Times New Roman", serif;
+                            padding: 12px 15px;
+                            position: relative;
+                            height: 55px;
+                        }
+                        .name:hover {
+                            color: #f58722;
+                            transition-duration: 1s;
                         }
                         .description {
                             font-weight: 10;
@@ -130,11 +153,12 @@
                     }
                     .price {
                         position: absolute;
-                        bottom: 0px;
-                        left: 10px;
-                        font-size: 16px;
-                        font-weight: 600;
-                        color: #f58722;
+                        bottom: 10px;
+                        font-size: 24px;
+                        font-family: "BebasNeue", "Lato", "Times New Roman", serif;
+                        font-weight: 700;
+                        color: #ea8025;
+                        left: 22px;
                     }
                 }
             }

@@ -5,9 +5,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const slides = [
-    { image: '/assests/images/slide_1.1.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
-    { image: '/assests/images/slide_1.2.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
-    { image: '/assests/images/slide_1.3.jpg', title: 'ABC RESTAURANT', content: 'STRØMMEN' },
+    { image: '/assests/images/slide_1.1.jpg', title: 'ABC', content: 'STRØMMEN' },
+    { image: '/assests/images/slide_1.2.jpg', title: 'ABC', content: 'STRØMMEN' },
+    { image: '/assests/images/slide_1.3.jpg', title: 'ABC', content: 'STRØMMEN' },
 ];
 const responsive = {
     superLargeDesktop: {
@@ -41,25 +41,30 @@ const foots = [
 export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
+        this.language = this.props.language;
         this.state = {
             clicked: false,
         }
+        slides.map((value) => {
+            value.title = this.language.firstTitle;
+            value.content = this.language.firstDescreption;
+        });
     }
     render() {
         return (
             <div className="content">
-                <Slideshow slides={slides} style={{ minHeight: (window.innerHeight) }} />
+                <div className="first-page">
+                    <Slideshow slides={slides} style={{ minHeight: (window.innerHeight) }} />
+                    <div class="fixed-scroll-down">
+                        <span class="fixed-scroll-text">Kéo xuống</span>
+                    </div>
+                </div>
                 <div className="about-us" style={{ minHeight: (window.innerHeight) }}>
                     <div className="background" ></div>
                     <div className='text-area'>
-                        <h1 className='title'>ABOUT US</h1>
+                        <h1 className='title'>{this.language.aboutus}</h1>
                         <div className='text-content'>
-                            <p>abc restaurant is a family business with over so years of experience in the industry</p>
-                            <p>we want to offer you an experience in asian flavors</p>
-                            <p>with us we have a la carte, sunday buffer, catering solutions and take away</p>
-                            <p>in addition we also have banqueeting rooms that you can book for coures</p>
-                            <p>and conferences or for other special events</p>
-                            <p>the restaurant is centrally located on STRØMMEN close to STRØMMEN storsenter</p>
+                            {this.language.aboutusDescription}
                         </div>
                     </div>
                     <div className="sushi-place">
@@ -123,7 +128,7 @@ export default class HomeScreen extends React.Component {
                         </div>
                     </div>
                 </div> */}
-            </div>
+            </div >
         )
     }
 }

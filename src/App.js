@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import LoadingBar from 'react-top-loading-bar';
+import { menuNav, homePage } from './laguage/lang.en';
 
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
 const MenuScreen = lazy(() => import('./componets/MenuScreen'));
@@ -65,11 +66,11 @@ class App extends React.Component {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">
-                                    <Nav.Link href="/">Home</Nav.Link>
-                                    <Nav.Link href="/menu">Menu</Nav.Link>
+                                    <Nav.Link href="/">{menuNav.home}</Nav.Link>
+                                    <Nav.Link href="/menu">{menuNav.menu}</Nav.Link>
                                     <Nav.Link href="/" className="logo-center"><img src='/assests/logo.png' alt='logo' /></Nav.Link>
-                                    <Nav.Link href="/resaurant">Restaurant</Nav.Link>
-                                    <Nav.Link href="/catering">Catering</Nav.Link>
+                                    <Nav.Link href="/catering">{menuNav.catering}</Nav.Link>
+                                    <Nav.Link href="/resaurant">{menuNav.aboutus}</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>
@@ -78,7 +79,7 @@ class App extends React.Component {
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path="/">
-                                <HomeScreen />
+                                <HomeScreen language={homePage} />
                             </Route>
                             <Route exact path="/menu">
                                 <MenuScreen />

@@ -22,25 +22,28 @@
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        padding-top: 100px;
+        padding-top: 50px;
+        padding-bottom: 20px;
         .sushi-place {
             // position: absolute;
             // bottom: 0;
             margin-top: 40px;
             width: 100%;
+            margin-bottom: 40px;
         }
         .text-area {
             color: white;
             .title {
-                font-size: 30px;
+                font-size: 40px;
                 margin-bottom: 20px;
+                font-weight: 300;
             }
             .text-content {
                 font-size: 15px;
                 text-transform: uppercase;
-                p {
-                    margin-bottom: 5px;
-                }
+                white-space: pre;
+                line-height: 30px;
+                font-weight: 100;
             }
         }
     }
@@ -73,7 +76,6 @@
                 opacity: 0.7;
             }
             .text-area {
-                font-family: "futura-lt-w01-book", sans-serif;
                 position: relative;
                 z-index: 99;
                 color: white;
@@ -105,9 +107,7 @@
     }
     .blog {
         background-image: url("/assests/images/blog_home.png");
-        // background-position: center;
         background-repeat: no-repeat;
-        // background-size: cover;
         position: relative;
         background-color: black;
         padding-top: 50px;
