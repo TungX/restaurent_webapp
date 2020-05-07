@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/menu.scss';
+import LoadingScreen from './LoadingScreen';
 
 export default class MenuScreen extends React.Component {
     constructor(props) {
@@ -132,9 +133,7 @@ export default class MenuScreen extends React.Component {
                         return this.renderItem(value, index);
                     })}
                 </ul>
-
             </div >
-
         )
     }
     handleClickCategory(index) {
@@ -144,7 +143,6 @@ export default class MenuScreen extends React.Component {
             window.scrollTo({ behavior: 'smooth', top: 0 });
     }
     render() {
-        this.count = 0;
         return (
             <div className={`content ${this.state.classWhenScroll}`}>
                 <div className="background" style={{ height: window.innerHeight }}>

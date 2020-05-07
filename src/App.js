@@ -8,6 +8,7 @@ import {
 import { Navbar, Nav } from 'react-bootstrap';
 import LoadingBar from 'react-top-loading-bar';
 import { menuNav, homePage } from './laguage/lang.en';
+import LoadingScreen from './componets/LoadingScreen';
 
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
 const MenuScreen = lazy(() => import('./componets/MenuScreen'));
@@ -46,21 +47,10 @@ class App extends React.Component {
                     height={3}
                     color='#118FA6'
                 />
-                <div className="wrapper">
+                
+                <div className="wrapper" style={{ minHeight: (window.innerHeight) }}>
                     <div id="header" className={this.state.classWhenScroll}>
                         <div className="background"></div>
-                        {/* <ul className='h_inner'>
-                            <li className="menu-left">
-                                <a href="/" className={this.state.currentPage === '/' ? 'active' : ''}>Home</a>
-                                <a href="/menu" className={this.state.currentPage === '/menu' ? 'active' : ''}>Menu</a>
-                                <a href="/booking" className={this.state.currentPage === '/booking' ? 'active' : ''}>Booking</a>
-                            </li>
-                            <li className="logo"><a href="/"><img src='/assests/logo.png' alt='logo' /></a></li>
-                            <li className="menu-right">
-                                <a href="/resaurant" className={this.state.currentPage === '/companies' ? 'active' : ''}>Restaurant</a>
-                                <a href="/catering" className={this.state.currentPage === '/catering' ? 'active' : ''}>Catering</a>
-                            </li>
-                        </ul> */}
                         <Navbar collapseOnSelect expand="lg">
                             <Navbar.Brand href="/" className="logo-left"><img src='/assests/logo.png' alt='logo' /></Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -76,7 +66,7 @@ class App extends React.Component {
                         </Navbar>
                     </div>
 
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={LoadingScreen}>
                         <Switch>
                             <Route exact path="/">
                                 <HomeScreen language={homePage} />
