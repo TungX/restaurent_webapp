@@ -30,6 +30,9 @@
             margin-top: 40px;
             width: 100%;
             margin-bottom: 40px;
+            img {
+                max-width: 100%;
+            }
         }
         .text-area {
             color: white;
@@ -41,9 +44,10 @@
             .text-content {
                 font-size: 15px;
                 text-transform: uppercase;
-                white-space: pre;
-                line-height: 30px;
                 font-weight: 100;
+                p {
+                    margin-bottom: 5px;
+                }
             }
         }
     }

@@ -4,9 +4,7 @@ import '../styles/restaurant.scss';
 export default class RestaurantScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            clicked: false,
-        }
+        this.language = this.props.language;
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick = () => {
@@ -18,26 +16,20 @@ export default class RestaurantScreen extends React.Component {
             <div className="content">
                 <div className="section-title" style={{ height: window.innerHeight }}>
                     <div className="text-area">
-                        <h1>OUR RESTAURANT</h1>
+                        <h1>{this.language.firstSectionTitle}</h1>
                         <div className="line"></div>
-                        <p>It hides a secret below the ground!</p>
+                        <p>{this.language.firstSectionDescreption}</p>
                     </div>
                 </div>
                 <div className="section section-two" style={{ height: (window.innerHeight) }}>
                     {/* <img src="/assests/images/restaurant_2.webp" alt="Kitchen" /> */}
                     <div className="text-area">
                         <div className="text-content">
-                            <h1 className="title">CONTACT US</h1>
+                            <h1 className="title">{this.language.secondSectionTitle}</h1>
                             <div className="section-content">
-                                <p>
-                                    Our restaurant is newly refurbished and is perfect for corporate dinners and larger private parties. Feel free to contact us for a nice chat about how we can help with their event
-                            </p>
-                                <p>
-                                    Contact: abcrestaurantasno@gmail.com
-                            </p>
-                                <p>
-                                    or call us on Tel: 41188856
-                            </p>
+                                {this.language.secondSectionDescreption.split('\n').map((p, index) => {
+                                    return <p key={index}>{p}</p>
+                                })}
                             </div>
                         </div>
                         <div className="background"></div>
@@ -47,17 +39,11 @@ export default class RestaurantScreen extends React.Component {
                     {/* <img src="/assests/images/restaurant_3.webp" alt="Kitchen" /> */}
                     <div className="text-area">
                         <div className="text-content">
-                            <h1 className="title">CONTACT US</h1>
+                            <h1 className="title">{this.language.thirdSectionTitle}</h1>
                             <div className="section-content">
-                                <p>
-                                    Our restaurant is newly refurbished and is perfect for corporate dinners and larger private parties. Feel free to contact us for a nice chat about how we can help with their event
-                            </p>
-                                <p>
-                                    Contact: abcrestaurantasno@gmail.com
-                            </p>
-                                <p>
-                                    or call us on Tel: 41188856
-                            </p>
+                                {this.language.thirdSectionDescreption.split('\n').map((p, index) => {
+                                    return <p key={index}>{p}</p>
+                                })}
                             </div>
                         </div>
                         <div className="background"></div>

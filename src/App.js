@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import LoadingBar from 'react-top-loading-bar';
-import { menuNav, homePage } from './laguage/lang.en';
+import languageEn from './laguage/lang.en';
+import languageNa from './laguage/lang.na';
 import LoadingScreen from './componets/LoadingScreen';
 
 const HomeScreen = lazy(() => import('./componets/HomeScreen'));
@@ -25,6 +26,20 @@ class App extends React.Component {
             classWhenScroll: '',
         };
         this.handleScroll = this.handleScroll.bind(this);
+        const params = new URLSearchParams(window.location.search);
+        this.attLange = '';
+        if(params.get('lang')){
+            this.attLange = `lang=${params.get('lang')}`;
+        }
+        if (params.get('lang') === 'na') {
+            this.language = languageNa;
+        } else {
+            this.language = languageEn;
+        }
+        params.set('lang', 'en');
+        this.enUrl = `${window.location.pathname}?${params.toString()}`;
+        params.set('lang', 'na');
+        this.naUrl = `${window.location.pathname}?${params.toString()}`;
     }
 
     componentDidMount() {
@@ -47,7 +62,7 @@ class App extends React.Component {
                     height={3}
                     color='#118FA6'
                 />
-                
+
                 <div className="wrapper" style={{ minHeight: (window.innerHeight) }}>
                     <div id="header" className={this.state.classWhenScroll}>
                         <div className="background"></div>
@@ -56,29 +71,33 @@ class App extends React.Component {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">
-                                    <Nav.Link href="/">{menuNav.home}</Nav.Link>
-                                    <Nav.Link href="/menu">{menuNav.menu}</Nav.Link>
-                                    <Nav.Link href="/" className="logo-center"><img src='/assests/logo.png' alt='logo' /></Nav.Link>
-                                    <Nav.Link href="/catering">{menuNav.catering}</Nav.Link>
-                                    <Nav.Link href="/resaurant">{menuNav.aboutus}</Nav.Link>
+                                    <Nav.Link href={`/?${this.attLange}`}>{this.language.menuNav.home}</Nav.Link>
+                                    <Nav.Link href={`/menu?${this.attLange}`}>{this.language.menuNav.menu}</Nav.Link>
+                                    <Nav.Link href={`/?${this.attLange}`} className="logo-center"><img src='/assests/logo.png' alt='logo' /></Nav.Link>
+                                    <Nav.Link href={`/catering?${this.attLange}`}>{this.language.menuNav.catering}</Nav.Link>
+                                    <Nav.Link href={`/resaurant?${this.attLange}`}>{this.language.menuNav.aboutus}</Nav.Link>
                                 </Nav>
                             </Navbar.Collapse>
+                            <div className='flags'>
+                                <Nav.Link href={this.enUrl} title='England'><img src='/assests/images/englandflag.png' /></Nav.Link>
+                                <Nav.Link href={this.naUrl} title='Norway'><img src='/assests/images/norwayflag.png' /></Nav.Link>
+                            </div>
                         </Navbar>
                     </div>
 
                     <Suspense fallback={LoadingScreen}>
                         <Switch>
                             <Route exact path="/">
-                                <HomeScreen language={homePage} />
+                                <HomeScreen language={this.language.homePage} />
                             </Route>
                             <Route exact path="/menu">
                                 <MenuScreen />
                             </Route>
                             <Route exact path="/resaurant">
-                                <RestaurantScreen />
+                                <RestaurantScreen language={this.language.restaurantPage} />
                             </Route>
                             <Route exact path="/catering">
-                                <CateringScreen />
+                                <CateringScreen language={this.language.cateringPage} />
                             </Route>
                             <Route exact path="/booking">
                                 <BookingScreen />
@@ -88,8 +107,8 @@ class App extends React.Component {
                 </div>
                 <div id="footer">
                     <div className="contact">
-                        <h1>RESTAURANT</h1>
-                        <h1>contact us</h1>
+                        <h1>{this.language.footer.contactTitle}</h1>
+                        <h1>{this.language.footer.contactDescreption}</h1>
                         <div className="icons">
                             <a href="https://www.facebook.com/ABCRestaurantAS/">
                                 <img src="/assests/images/facebook-logo.webp" alt="facebook logo" />
@@ -117,30 +136,30 @@ class App extends React.Component {
                         </div>
                     </div>
                     <div className="open-time">
-                        <h1>Openning</h1>
-                        <h3>RESTAURANT</h3>
+                        <h1>{this.language.footer.openTimeTitle}</h1>
+                        <h3>{this.language.footer.openTimeRestaurant}</h3>
                         <div className="duration">
                             <p>
-                                <span className="day">Monday - Thursday:</span>
+                                <span className="day">{this.language.footer.openTimeMonThu}:</span>
                                 <span className="time">15.00 - 22.00</span>
                             </p>
                             <p>
-                                <span className="day">Friday - Saturday:</span>
+                                <span className="day">{this.language.footer.openTimeFriSat}:</span>
                                 <span className="time">15.00 - 23.00</span>
                             </p>
                             <p>
-                                <span className="day">Sunday:</span>
+                                <span className="day">{this.language.footer.openTimeSun}:</span>
                                 <span className="time">15.00 - 22.00</span>
                             </p>
                         </div>
-                        <h3>CAFE & TAKE AWAY</h3>
+                        <h3>{this.language.footer.openTimeCoffee}</h3>
                         <div className="duration">
                             <p>
-                                <span className="day">Monday - Saturday:</span>
+                                <span className="day">{this.language.footer.openTimeMonSat}:</span>
                                 <span className="time">11.00 - 19.00</span>
                             </p>
                             <p>
-                                <span className="day">Sunday:</span>
+                                <span className="day">{this.language.footer.openTimeSun}:</span>
                                 <span className="time">14.00 - 19.00</span>
                             </p>
                         </div>

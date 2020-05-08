@@ -64,7 +64,9 @@ export default class HomeScreen extends React.Component {
                     <div className='text-area'>
                         <h1 className='title'>{this.language.aboutus}</h1>
                         <div className='text-content'>
-                            {this.language.aboutusDescription}
+                            {this.language.aboutusDescription.split('\n').map((sentence, index) => {
+                                return <p key={index}>{sentence}</p>
+                            })}
                         </div>
                     </div>
                     <div className="sushi-place">
@@ -81,7 +83,7 @@ export default class HomeScreen extends React.Component {
                         infinite={true}
                     >
                         {foots.map((value, index) => {
-                            return <div className='slide-foot' key={`slide-foot-${index}`}><img src={value} /></div>
+                            return <div className='slide-foot' key={`slide-foot-${index}`}><img src={value} style={{maxWidth: window.innerWidth}} /></div>
                         })}
                     </Carousel>
                 </div>

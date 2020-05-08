@@ -26,7 +26,7 @@ html {
     width: 100%;
     position: fixed;
     top: 0;
-    z-index: 200;
+    z-index: 1000;
     .background {
         position: absolute;
         top: 0;
@@ -70,6 +70,23 @@ html {
         }
         a:hover:not(.active) {
             color: #f58722;
+        }
+    }
+
+    .flags {
+        width: 60px;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+        a {
+            padding: 8px 0;
+            img {
+                width: 30px;
+                height: auto;
+            }
         }
     }
 }
@@ -164,7 +181,7 @@ ul {
     color: black;
 }
 
-@media only screen and (min-width: 680px) {
+@media only screen and (min-width: 820px) {
     .navbar-expand-lg {
         .navbar-toggler {
             display: none;
@@ -183,8 +200,12 @@ ul {
     }
 }
 
-@media only screen and (max-width: 679px) {
+@media only screen and (max-width: 819px) {
     #header {
+        .flags {
+            right: 80px;
+            top: 43px;
+        }
         .background {
             opacity: 1;
         }
@@ -203,7 +224,7 @@ ul {
     }
 }
 
-@media only screen and (max-width: 799px) {
+@media only screen and (max-width: 944px) {
     #footer {
         grid-template-columns: 50% 50%;
     }
