@@ -13,7 +13,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.10",
-    "node-sass": "^4.13.1",
+    "node-sass": "^9.0.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-alice-carousel": "^1.18.0",
@@ -24,7 +24,7 @@
     "react-rebound": "^0.8.3",
     "react-redux-loading-bar": "^4.6.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-slideshow-image": "^1.4.0",
     "react-top-loading-bar": "^1.2.0",
     "react-waypoint": "^9.0.2"
